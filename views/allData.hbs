@@ -1,0 +1,47 @@
+{{!-- {{> partials/header}} --}}
+
+<h2>All Books Information</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Pages</th>
+      <th>Average Reviews</th>
+      <th>Number of Reviews</th>
+      <th>Star Rating</th>
+      <th>Dimensions</th>
+      <th>Weight</th>
+      <th>Language</th>
+      <th>Publisher</th>
+      <th>ISBN_13</th>
+      <th>Complete Link</th>
+      <!-- Add other columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    {{#each books}}
+      {{!-- {{#if avg_reviews}} --}}
+        <tr class="{{#unless avg_reviews}}empty-reviews{{/unless}}">
+          <td>{{this.title}}</td>
+          <td>{{this.author}}</td>
+          <td>${{this.price}}</td>
+          <td>{{this.pages}}</td>
+          {{!-- <td>{{this.avg_reviews}}</td> --}}
+          <td>{{displayAvgReviews this.avg_reviews}}</td>
+          <td>{{this.n_reviews}}</td>
+          <td>{{this.star}}</td>
+          <td>{{this.dimensions}}</td>
+          <td>{{this.weight}}</td>
+          <td>{{this.language}}</td>
+          <td>{{this.publisher}}</td>
+          <td>{{this.ISBN_13}}</td>
+          <td><a href="{{this.complete_link}}" target="_blank">Amazon Link</a></td>
+          <!-- Add other columns as needed -->
+        </tr>
+      {{!-- {{/if}} --}}
+    {{/each}}
+  </tbody>
+</table>

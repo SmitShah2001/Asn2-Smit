@@ -1,0 +1,16 @@
+<div class="centerdiv">
+  <h1>Search results for "{{searchTitle}}"</h1>
+  <div class="boxshadow">
+    <h2>Books Information</h2>
+    <h2>No of Result Found : {{results.length}}</h2>
+    {{#each results}}
+      <div class="book-info">
+        <p class="information"><b>Title: </b>{{title}}</p>
+        <p class="information"><b>Author: </b>{{author}}</p>
+        <p class="information"><b>Price: </b> ${{price}}</p>
+        <p class="information"><b>Publisher: </b> {{publisher}}</p>
+        <!-- Add other properties as needed -->
+      </div>
+    {{/each}}
+  </div>
+</div>
